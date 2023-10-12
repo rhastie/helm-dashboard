@@ -185,12 +185,12 @@ const DescribeResource = ({
 
         <div className="flex  items-center gap-4 pr-4">
           <a
-            href="https://www.komodor.com/helm-dash/?utm_campaign=Helm%20Dashboard%20%7C%20CTA&amp;utm_source=helm-dash&amp;utm_medium=cta&amp;utm_content=helm-dash"
+            href="https://developer.nvidia.com/holoscan-for-media/"
             className="bg-primary text-white p-1.5 text-sm flex items-center rounded"
             target="_blank"
             rel="noreferrer"
           >
-            See more details in Komodor
+            Holoscan for Media
             <RiExternalLinkLine className="ml-2 text-lg" />
           </a>
           <button

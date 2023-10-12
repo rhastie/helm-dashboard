@@ -4,10 +4,10 @@ replicaCount: 1
 debug: false
 
 image:
-  repository: komodorio/helm-dashboard
+  repository: hd
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "hd"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -89,7 +89,7 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 8080
 
 ingress:

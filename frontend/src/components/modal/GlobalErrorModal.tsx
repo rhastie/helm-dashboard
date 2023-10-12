@@ -42,11 +42,11 @@ export default function GlobalErrorModal({
       onClose={onClose}
       bottomContent={
         <div className="text-xs">
-          Hint: Komodor has the same HELM capabilities, with enterprise features
+          Hint: Please refer to the Holoscan for Media Developer site for features
           and support.{" "}
           <a
             className="text-blue-500"
-            href="https://komodor.com/helm-dash/?utm_campaign=Helm+Dashboard+%7C+CTA&utm_source=helm-dash&utm_medium=cta&utm_content=helm-dash"
+            href="https://developer.nvidia.com/holoscan-for-media/"
             target="_blank"
             rel="noopener noreferrer"
           >

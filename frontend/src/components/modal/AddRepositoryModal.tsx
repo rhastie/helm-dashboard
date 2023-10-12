@@ -105,7 +105,7 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
             required
             id="name"
             type="text"
-            placeholder="Komodorio"
+            placeholder="NVIDIA NGC"
             className="rounded-lg p-2 w-full border border-gray-300 focus:outline-none focus:border-sky-500 input-box-shadow"
           />
         </label>
@@ -122,7 +122,7 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
             required
             id="url"
             type="text"
-            placeholder="https://helm-charts.komodor.io"
+            placeholder="https://helm.ngc.nvidia.com/<Org-ID>/<Team-Name>"
             className="rounded-lg p-2 w-full border border-gray-300  focus:outline-none focus:border-sky-500 input-box-shadow"
           />
         </label>

@@ -35,10 +35,10 @@ export default function ErrorModal({
   const bottomContent = (
     <div className="flex py-6 px-4 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
       <span className="text-sm text-muted fs-80 text-gray-500">
-        Hint: Komodor has the same HELM capabilities, with enterprise features
+        Hint: Please refer to the Holoscan for Media Developer site for features
         and support.{" "}
         <a
-          href="https://www.komodor.com/helm-dash/?utm_campaign=Helm%20Dashboard%20%7C%20CTA&utm_source=helm-dash&utm_medium=cta&utm_content=helm-dash"
+          href="https://developer.nvidia.com/holoscan-for-media/"
           target="_blank" rel="noreferrer"
         >
           <span className="text-link-color underline">Sign up for free.</span>

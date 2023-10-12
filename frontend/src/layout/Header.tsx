@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import LogoHeader from "../assets/logo-header.svg";
 import DropDown from "../components/common/DropDown";
-import WatcherIcon from "../assets/k8s-watcher.svg";
+import NVIcon from "../assets/nvidia.svg";
 import ShutDownButton from "../components/ShutDownButton";
 import {
   BsSlack,
@@ -30,7 +30,7 @@ export default function Header() {
   };
 
   const openProjectPage = () => {
-    window.open("https://github.com/komodorio/helm-dashboard", "_blank");
+    window.open("https://developer.nvidia.com/holoscan-for-media/", "_blank");
   };
 
   const resetCache = async () => {
@@ -141,22 +141,19 @@ export default function Header() {
       </div>
       <div className="h-16 flex items-center text-sm ">
         <div className="flex p-1 gap-2 border bottom-gray-200 rounded min-w-max">
-          <img src={WatcherIcon} width={40} height={40} />
-          <div className="flex flex-col">
+          <img src={NVIcon} width={128} height={24} />
+          <div className="flex flex-col justify-center">
             <a
-              href="https://komodor.com/helm-dash/"
-              className="text-link-color font-bold"
+              href="https://developer.nvidia.com/holoscan-for-media/"
+              className="text-primary font-bold"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className="flex font-bold items-center gap-2 min-w-[25%] ">
-                Upgrade your HELM experience - Free
+                Holoscan For Media
                 <BsBoxArrowUpRight className="w-[14px] h-[14px]" />
               </div>
             </a>
-            <label className="text-muted">
-              Auth & RBAC, k8s events, troubleshooting and more
-            </label>
           </div>
         </div>
 
