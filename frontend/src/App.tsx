@@ -22,10 +22,20 @@ const queryClient = new QueryClient({
 });
 
 const PageLayout = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+
+    // Toggle the 'dark' class on the <html> element
+    document.documentElement.classList.toggle('dark');
+  };
+
   return (
-    <div className="flex flex-col h-screen">
+    <div className={`flex flex-col h-screen dark:bg-black ${isDarkMode ? 'dark' : ''}`}>
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
       <Header />
-      <div className="bg-body-background bg-no-repeat bg-[url('./assets/body-background.svg')] flex-1">
+      <div className={isDarkMode?"":"bg-body-background bg-no-repeat bg-[url('./assets/body-background.svg')] flex-1"}>
         <Outlet />
       </div>
     </div>

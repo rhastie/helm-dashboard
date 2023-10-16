@@ -56,7 +56,7 @@ export default function Header() {
     }`;
 
   return (
-    <div className="h-16 flex items-center justify-between bg-white custom-shadow">
+    <div className="h-16 flex items-center justify-between bg-white dark:bg-black dark:text-white dark:border-b dark:border-gray-500 custom-shadow">
       <div className="h-16 flex items-center gap-6 min-w-fit ">
         <LinkWithSearchParams to={"/installed"} exclude={["tab"]}>
           <img
