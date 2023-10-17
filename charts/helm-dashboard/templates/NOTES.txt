@@ -12,5 +12,5 @@ Helm Dashboard can be accessed:
     kubectl --namespace {{ .Release.Namespace }} port-forward $POD_NAME 8080:$CONTAINER_PORT
 
 Visit our repo at:
-https://github.com/komodorio/helm-dashboard
+https://github.com/rhastie/helm-dashboard
 

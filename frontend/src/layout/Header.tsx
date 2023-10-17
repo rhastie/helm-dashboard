@@ -4,7 +4,7 @@ import DropDown from "../components/common/DropDown";
 import NVIcon from "../assets/nvidia.svg";
 import ShutDownButton from "../components/ShutDownButton";
 import {
-  BsSlack,
+  BsFillChatSquareTextFill,
   BsGithub,
   BsArrowRepeat,
   BsBraces,
@@ -27,7 +27,7 @@ export default function Header() {
   const location = useLocation();
 
   const openSupportChat = () => {
-    window.open("https://app.slack.com/client/T03Q4H8PCRW", "_blank");
+    window.open("https://forums.developer.nvidia.com/c/private/holoscan-for-media-early-access/", "_blank");
   };
 
   const openProjectPage = () => {
@@ -94,7 +94,7 @@ export default function Header() {
                   {
                     id: "1",
                     text: "Support chat",
-                    icon: <BsSlack />,
+                    icon: <BsFillChatSquareTextFill />,
                     onClick: openSupportChat,
                   },
                   {
@@ -128,7 +128,7 @@ export default function Header() {
             {statusData?.LatestVer ? (
               <li className="min-w-[130px]">
                 <a
-                  href="https://github.com/komodorio/helm-dashboard/releases"
+                  href="https://github.com/rhastie/helm-dashboard/releases"
                   className="text-upgrade-color"
                   target="_blank"
                   rel="noopener noreferrer"
