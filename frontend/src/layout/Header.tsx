@@ -14,6 +14,7 @@ import { useGetApplicationStatus } from "../API/other";
 import LinkWithSearchParams from "../components/LinkWithSearchParams";
 import apiService from "../API/apiService";
 import { useAppContext } from "../context/AppContext";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 export default function Header() {
   const { clusterMode, setClusterMode } = useAppContext();
@@ -139,6 +140,7 @@ export default function Header() {
           </ul>
         </div>
       </div>
+      <DarkModeToggle />
       <div className="h-16 flex items-center text-sm ">
         <div className="flex p-1 gap-2 border bottom-gray-200 rounded min-w-max">
           <img src={NVIcon} width={128} height={24} />

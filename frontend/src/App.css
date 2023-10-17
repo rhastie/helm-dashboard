@@ -94,3 +94,50 @@ form {
 .charts > h3 {
   flex: 0.2;
 }
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dark-mode-toggle span {
+  margin-right: 8px;
+}
+
+.dark-mode-toggle input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle-slider {
+  width: 30px;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-slider::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Styles for dark mode */
+.dark-mode .toggle-slider {
+  background-color: #333;
+}
+
+.dark-mode .toggle-slider::before {
+  transform: translateX(15px);
+}

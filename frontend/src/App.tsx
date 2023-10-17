@@ -11,6 +11,7 @@ import GlobalErrorModal from "./components/modal/GlobalErrorModal";
 import { AppContextProvider } from "./context/AppContext";
 import apiService from "./API/apiService";
 import DocsPage from "./pages/DocsPage";
+import { useDarkMode } from "./hooks/useDarkMode";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,21 +22,16 @@ const queryClient = new QueryClient({
   },
 });
 
-const PageLayout = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+type PageLayoutProps = {
+  isDarkMode:boolean;
+}
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
 
-    // Toggle the 'dark' class on the <html> element
-    document.documentElement.classList.toggle('dark');
-  };
-
+const PageLayout = (props:PageLayoutProps) => {
   return (
-    <div className={`flex flex-col h-screen dark:bg-black ${isDarkMode ? 'dark' : ''}`}>
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+    <div className="flex flex-col h-screen dark:bg-black">
       <Header />
-      <div className={isDarkMode?"":"bg-body-background bg-no-repeat bg-[url('./assets/body-background.svg')] flex-1"}>
+      <div className="bg-body-background bg-no-repeat dark:bg-black flex-1">
         <Outlet />
       </div>
     </div>
@@ -51,12 +47,12 @@ const SyncContext: React.FC = () => {
   return <Outlet />;
 };
 
-export default function App() {
+const App: React.FC = () => {
   const [shouldShowErrorModal, setShowErrorModal] = useState<
     ErrorAlert | undefined
   >(undefined);
   const value = { shouldShowErrorModal, setShowErrorModal };
-
+  const [isDarkMode, toggleDarkMode] = useDarkMode();
   return (
     <AppContextProvider>
       <ErrorModalContext.Provider value={value}>
@@ -64,7 +60,7 @@ export default function App() {
           <HashRouter>
             <Routes>
               <Route path="docs/" element={<DocsPage />} />
-              <Route path="*" element={<PageLayout />}>
+              <Route path="*" element={<PageLayout isDarkMode={isDarkMode}/>}>
                 <Route path=":context?/*" element={<SyncContext />}>
                   <Route path="installed/?" element={<Installed />} />
                   <Route
@@ -93,3 +89,5 @@ export default function App() {
     </AppContextProvider>
   );
 }
+
+export default App;
