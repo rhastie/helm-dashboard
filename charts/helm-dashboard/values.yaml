@@ -4,12 +4,20 @@ replicaCount: 1
 debug: false
 
 image:
-  repository: hd
+  repository: "nvcr.io/azqptjkaaotv/docker-desktop/helm-dashboard"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "hd"
+  tag: ""
 
-imagePullSecrets: []
+imagePullSecrets:
+- name: helmdashboard-pullsecrets
+
+imageCredentials:
+  registry: nvcr.io
+  username: $oauthtoken
+  password: ""
+  email: rhastie@nvidia.com
+  
 nameOverride: ""
 fullnameOverride: ""
 
