@@ -44,7 +44,7 @@ export default function RevisionResource({ isLatest }: Props) {
       {isLoading ? (
         <Spinner />
       ) : (
-        <tbody className="bg-white mt-4 h-8 rounded w-full">
+        <tbody className="bg-white dark:bg-slate-800 dark:text-white mt-4 h-8 rounded w-full">
           {resources?.length ? (
             resources
               .sort(function (a, b) {
@@ -65,7 +65,7 @@ export default function RevisionResource({ isLatest }: Props) {
               ))
           ) : (
             <tr>
-              <div className="bg-white rounded shadow display-none no-charts mt-3 text-sm p-4">
+              <div className="bg-white dark:bg-slate-800 dark:text-white rounded shadow display-none no-charts mt-3 text-sm p-4">
                 Looks like you don&apos;t have any resources.{" "}
                 <RiExternalLinkLine className="ml-2 text-lg" />
               </div>
@@ -210,7 +210,7 @@ const DescribeResource = ({
       ) : (
         <div className="h-full overflow-y-auto ">
           <pre
-            className="bg-white rounded p-4 font-medium text-base font-sf-mono"
+            className="bg-white dark:bg-slate-800 dark:text-white rounded p-4 font-medium text-base font-sf-mono"
             style={{ overflow: "unset" }}
             dangerouslySetInnerHTML={{
               __html: yamlFormattedData,

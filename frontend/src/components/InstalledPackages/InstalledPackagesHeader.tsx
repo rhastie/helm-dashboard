@@ -17,8 +17,8 @@ export default function InstalledPackagesHeader({
     !isLoading && (numOfPackages === undefined || numOfPackages === 0)
   );
   return (
-    <div className="custom-shadow rounded-t-md  ">
-      <div className="flex items-center justify-between bg-white px-2 py-0.5 font-inter rounded-t-md ">
+    <div className="custom-shadow rounded-t-md ">
+      <div className="flex items-center justify-between bg-white dark:bg-slate-800 dark:text-white px-2 py-0.5 font-inter rounded-t-md ">
         <div className="flex items-center">
           <img
             src={HeaderLogo}
@@ -32,7 +32,7 @@ export default function InstalledPackagesHeader({
 
         <div className="w-1/3">
           <input
-            className="border-installed-charts-filter  rounded p-1 text-sm w-11/12"
+            className="border-installed-charts-filter dark:bg-slate-800 dark:text-white rounded p-1 text-sm w-11/12"
             placeholder="Filter..."
             type="text"
             onChange={(ev) => setFilterKey(ev.target.value)}
@@ -41,7 +41,7 @@ export default function InstalledPackagesHeader({
       </div>
 
       {showNoPackageAlert && (
-        <div className="bg-white rounded shadow display-none no-charts mt-3 text-sm p-4">
+        <div className="bg-white dark:bg-slate-800 dark:text-white rounded shadow display-none no-charts mt-3 text-sm p-4">
           Looks like you don&apos;t have any charts installed.
           &quot;Repository&quot; section may be a good place to start.
         </div>
