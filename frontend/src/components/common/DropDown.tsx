@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import ArrowDownIcon from "../../assets/arrow-down-icon.svg";
+import ArrowDownIcon from "../../assets/down-arrow-svgrepo-com.svg";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Icon } from "@mui/material";
 
 export type DropDownItem = {
   id: string;
@@ -26,6 +28,8 @@ function DropDown({ items }: DropDownProps) {
     X: 0,
     Y: 0,
   });
+
+
 
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -65,7 +69,7 @@ function DropDown({ items }: DropDownProps) {
           className="flex items-center justify-between"
         >
           Help
-          <img src={ArrowDownIcon} className="ml-2 w-[10px] h-[10px]" />
+          <KeyboardArrowDownIcon />
         </button>
       </div>
       {popupState.isOpen && (

@@ -1,5 +1,8 @@
 import HeaderLogo from "../../assets/packges-header.svg";
+import HeaderLogoWhite from "../../assets/helm-white.svg";
 import { Release } from "../../data/types";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/ThemeContext";
 
 type InstalledPackagesHeaderProps = {
   filteredReleases?: Release[];
@@ -16,12 +19,13 @@ export default function InstalledPackagesHeader({
   const showNoPackageAlert = Boolean(
     !isLoading && (numOfPackages === undefined || numOfPackages === 0)
   );
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <div className="custom-shadow rounded-t-md ">
       <div className="flex items-center justify-between bg-white dark:bg-slate-800 dark:text-white px-2 py-0.5 font-inter rounded-t-md ">
         <div className="flex items-center">
           <img
-            src={HeaderLogo}
+            src={darkMode?HeaderLogoWhite:HeaderLogo}
             alt="Helm-DashBoard"
             className="display-inline h-12 ml-3 mr-3 w-[28px] "
           />

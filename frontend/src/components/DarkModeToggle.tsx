@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDarkMode } from '../hooks/useDarkMode';
+import React, { useContext, useState } from 'react';
+import { DarkModeContext } from '../context/ThemeContext';
 
 const SunIcon = () => (
   <svg
@@ -57,11 +57,11 @@ const MoonIcon = () => (
 );
 
 const DarkModeToggle: React.FC = () => {
-  const [isDarkMode, toggleDarkMode] = useDarkMode();
+  const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
 
   return (
     <button onClick={toggleDarkMode}>
-    {isDarkMode ? (
+    {darkMode ? (
       <SunIcon />
     ) : (
       <MoonIcon />
