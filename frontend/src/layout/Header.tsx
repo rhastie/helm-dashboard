@@ -131,7 +131,7 @@ export default function Header() {
               />
             </li>
             <li>
-            <DarkModeToggle />
+              <DarkModeToggle />
             </li>
             {statusData?.LatestVer ? (
               <li className="min-w-[130px]">

@@ -32,7 +32,7 @@ function ChartViewer({ chart }: ChartViewerProps) {
         <span className="col-span-1 text-center">{chart.version}</span>
         <span className="col-span-1 text-center">
           <button
-            className={`bg-white dark:bg-slate-800 dark:text-white border border-gray-300 px-2 p-1 rounded-md font-semibold ${
+            className={`bg-white dark:bg-slate-700 dark:text-white border border-gray-300 px-2 p-1 rounded-md font-semibold ${
               showInstallButton ? "visible" : "invisible"
             }`}
             onClick={() => setShowInstallModal(true)}

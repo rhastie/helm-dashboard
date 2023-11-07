@@ -44,7 +44,7 @@ export default function RevisionsList({
             key={release.revision}
             className={`flex flex-col border rounded-md mx-5 p-2 gap-4 cursor-pointer ${
               release.revision === selectedRevision
-                ? "border-revision-dark bg-white dark:bg-slate-800 dark:text-white"
+                ? "border-revision-dark bg-white dark:bg-slate-700 dark:text-white"
                 : "border-revision-light bg-body-background"
             }`}
           >

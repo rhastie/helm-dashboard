@@ -60,7 +60,7 @@ const DarkModeToggle: React.FC = () => {
   const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
 
   return (
-    <button onClick={toggleDarkMode}>
+    <button className="text-md py-2.5 px-5 text-primary rounded-sm" onClick={toggleDarkMode}>
     {darkMode ? (
       <SunIcon />
     ) : (
