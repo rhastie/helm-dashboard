@@ -11,7 +11,6 @@ import GlobalErrorModal from "./components/modal/GlobalErrorModal";
 import { AppContextProvider } from "./context/AppContext";
 import apiService from "./API/apiService";
 import DocsPage from "./pages/DocsPage";
-import { useDarkMode } from "./hooks/useDarkMode";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,12 +21,7 @@ const queryClient = new QueryClient({
   },
 });
 
-type PageLayoutProps = {
-  isDarkMode:boolean;
-}
-
-
-const PageLayout = (props:PageLayoutProps) => {
+const PageLayout = () => {
   return (
     <div className="flex flex-col h-screen dark:bg-black">
       <Header />
@@ -52,7 +46,6 @@ const App: React.FC = () => {
     ErrorAlert | undefined
   >(undefined);
   const value = { shouldShowErrorModal, setShowErrorModal };
-  const [isDarkMode, toggleDarkMode] = useDarkMode();
   return (
     <AppContextProvider>
       <ErrorModalContext.Provider value={value}>
@@ -60,7 +53,7 @@ const App: React.FC = () => {
           <HashRouter>
             <Routes>
               <Route path="docs/" element={<DocsPage />} />
-              <Route path="*" element={<PageLayout isDarkMode={isDarkMode}/>}>
+              <Route path="*" element={<PageLayout />}>
                 <Route path=":context?/*" element={<SyncContext />}>
                   <Route path="installed/?" element={<Installed />} />
                   <Route

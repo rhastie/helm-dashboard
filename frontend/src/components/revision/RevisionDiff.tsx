@@ -134,7 +134,7 @@ function RevisionDiff({
 
   return (
     <div>
-      <div className="flex mb-3 p-2 border border-revision flex-row items-center justify-between w-full bg-white dark:bg-slate-800 dark:text-white rounded">
+      <div className="flex mb-3 p-2 border border-revision flex-row items-center justify-between w-full bg-white dark:bg-slate-700 dark:text-white rounded">
         <div className="flex items-center">
           <input
             checked={viewMode === "view"}
@@ -214,14 +214,14 @@ function RevisionDiff({
       </div>
       {isLoading ? <Spinner /> : ""}
       {viewMode === VIEW_MODE_VIEW_ONLY && content ? (
-        <div className="bg-white dark:bg-slate-800 dark:text-white overflow-x-auto w-full p-3 relative">
-          <pre className="bg-white dark:bg-slate-800 dark:text-white rounded font-sf-mono">{parse(content)}</pre>
+        <div className="bg-white dark:bg-slate-700 dark:text-white overflow-x-auto w-full p-3 relative">
+          <pre className="bg-white dark:bg-slate-700 dark:text-white rounded font-sf-mono">{parse(content)}</pre>
         </div>
       ) : (
         ""
       )}
       <div
-        className="bg-white dark:bg-slate-800 dark:text-white w-full relative leading-5 font-sf-mono"
+        className="bg-white dark:bg-slate-700 dark:text-white w-full relative leading-5 font-sf-mono"
         //@ts-ignore
         ref={diffElement}
       ></div>

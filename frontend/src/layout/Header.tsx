@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import LogoHeader from "../assets/logo-header.svg";
+import LogoHeaderInverted from "../assets/logo-header-inverted.svg";
 import DropDown from "../components/common/DropDown";
 import NVIcon from "../assets/nvidia.svg";
 import ShutDownButton from "../components/ShutDownButton";
@@ -14,6 +15,8 @@ import { useGetApplicationStatus } from "../API/other";
 import LinkWithSearchParams from "../components/LinkWithSearchParams";
 import apiService from "../API/apiService";
 import { useAppContext } from "../context/AppContext";
+import { DarkModeContext } from "../context/ThemeContext";
+import { useContext } from "react";
 import DarkModeToggle from "../components/DarkModeToggle";
 
 export default function Header() {
@@ -25,6 +28,8 @@ export default function Header() {
   });
 
   const location = useLocation();
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const openSupportChat = () => {
     window.open("https://forums.developer.nvidia.com/c/private/holoscan-for-media-early-access/", "_blank");
@@ -61,7 +66,7 @@ export default function Header() {
       <div className="h-16 flex items-center gap-6 min-w-fit ">
         <LinkWithSearchParams to={"/installed"} exclude={["tab"]}>
           <img
-            src={LogoHeader}
+            src={darkMode?LogoHeaderInverted:LogoHeader}
             alt="helm dashboard logo"
             className="ml-3 w-48 min-w-[80px]"
           />
@@ -125,6 +130,9 @@ export default function Header() {
                 ]}
               />
             </li>
+            <li>
+              <DarkModeToggle />
+            </li>
             {statusData?.LatestVer ? (
               <li className="min-w-[130px]">
                 <a
@@ -140,10 +148,10 @@ export default function Header() {
           </ul>
         </div>
       </div>
-      <DarkModeToggle />
+      
       <div className="h-16 flex items-center text-sm ">
         <div className="flex p-1 gap-2 border bottom-gray-200 rounded min-w-max">
-          <img src={NVIcon} width={128} height={24} />
+          <img src={darkMode?"https://cdn-assets-us.frontify.com/s3/frontify-enterprise-files-us/eyJwYXRoIjoibnZpZGlhXC9hY2NvdW50c1wvYTBcLzQwMDEwODlcL3Byb2plY3RzXC8yMFwvYXNzZXRzXC9kM1wvMTYwMTlcL2Q5ZDdkODFiMTcwZWM2YzdkNjQyZTUzOThhZWFmMzE4LTE2MzUzNjc1MTgucG5nIn0:nvidia:taOsL2EXEw_k2Lv33hcBjPzkHy7m7tF2EEiFNcMo0Tc?width=2400":NVIcon} width={128} height={24} />
           <div className="flex flex-col justify-center">
             <a
               href="https://developer.nvidia.com/holoscan-for-media/"

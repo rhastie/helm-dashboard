@@ -41,7 +41,7 @@ const Modal = ({
   const colorVariants = new Map<ModalButtonStyle, string>([
     [
       ModalButtonStyle.default,
-      "text-base font-semibold text-gray-500 bg-white dark:bg-slate-800 dark:text-white hover:bg-gray-100 disabled:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 font-medium px-5 py-1 hover:text-gray-900 focus:z-10 ",
+      "text-base font-semibold text-gray-500 bg-white dark:bg-slate-700 dark:text-white hover:bg-gray-100 disabled:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 font-medium px-5 py-1 hover:text-gray-900 focus:z-10 ",
     ],
     [
       ModalButtonStyle.info,
@@ -78,7 +78,7 @@ const Modal = ({
   return ReactDom.createPortal(
     <>
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity ">
+        <div className="fixed inset-0 bg-black bg-opacity-60 transition-opacity ">
           <div className="flex justify-center">
             <div
               style={{
@@ -89,7 +89,7 @@ const Modal = ({
                 !containerClassNames ||
                 (containerClassNames && !containerClassNames.includes("bg-"))
                   ? "bg-white"
-                  : "dark:bg-slate-800 dark:text-white"
+                  : "dark:bg-slate-700 dark:text-white"
               } ${containerClassNames ?? ""}`}
             >
               {title && (

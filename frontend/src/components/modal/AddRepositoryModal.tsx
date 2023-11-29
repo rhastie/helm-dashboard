@@ -74,14 +74,14 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
 
   return (
     <Modal
-      containerClassNames={"w-full max-w-5xl"}
+      containerClassNames={"w-full max-w-5xl dark:bg-slate-700 dark:text-white bg-white"}
       title="Add Chart Repository"
       isOpen={isOpen}
       onClose={onClose}
       bottomContent={
         <div className="flex justify-end p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
           <button
-            className="flex items-center text-white font-medium px-3 py-1.5 bg-primary hover:bg-add-repo focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-blue-300 rounded-lg text-base text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="flex items-center text-white font-medium px-3 py-1.5 bg-primary hover:bg-add-repo focus:ring-4 focus:outline-none focus:ring-grey-300 disabled:bg-grey-300 rounded-lg text-base text-center dark:bg-grey-600 dark:hover:bg-grey-700 dark:focus:ring-white-800"
             onClick={addRepository}
             disabled={isLoading}
           >
@@ -106,7 +106,7 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
             id="name"
             type="text"
             placeholder="NVIDIA NGC"
-            className="rounded-lg p-2 w-full border border-gray-300 focus:outline-none focus:border-sky-500 input-box-shadow"
+            className="rounded-lg p-2 w-full border border-gray-300 focus:outline-none focus:border-sky-500 input-box-shadow dark:bg-slate-700 dark:text-white"
           />
         </label>
         <label className="flex-1" htmlFor="url">
@@ -123,7 +123,7 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
             id="url"
             type="text"
             placeholder="https://helm.ngc.nvidia.com/<Org-ID>/<Team-Name>"
-            className="rounded-lg p-2 w-full border border-gray-300  focus:outline-none focus:border-sky-500 input-box-shadow"
+            className="rounded-lg p-2 w-full border border-gray-300  focus:outline-none focus:border-sky-500 input-box-shadow dark:bg-slate-700 dark:text-white"
           />
         </label>
       </div>
@@ -140,7 +140,7 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
             required
             id="username"
             type="text"
-            className="rounded-lg p-2 w-full border border-gray-300  focus:outline-none focus:border-sky-500 input-box-shadow"
+            className="rounded-lg p-2 w-full border border-gray-300  focus:outline-none focus:border-sky-500 input-box-shadow dark:bg-slate-700 dark:text-white"
           />
         </label>
         <label className="flex-1" htmlFor="password">
@@ -155,7 +155,7 @@ function AddRepositoryModal({ isOpen, onClose }: AddRepositoryModalProps) {
             required
             id="password"
             type="text"
-            className="rounded-lg p-2 w-full border border-gray-300 focus:outline-none focus:border-sky-500 input-box-shadow"
+            className="rounded-lg p-2 w-full border border-gray-300 focus:outline-none focus:border-sky-500 input-box-shadow dark:bg-slate-700 dark:text-white"
           />
         </label>
       </div>
